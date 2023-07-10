@@ -34,11 +34,18 @@ function update() {
         } else {
             circle.classList.remove('active');
         }
-    })  
+    })
+    
+    activeRowColor()
 
     btnActive()
+}
 
-    activeRowColor()
+function activeRowColor() {
+    
+    const actives = document.querySelectorAll(".active");
+
+    progress.style.width = ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
 }
 
 function btnActive() {
@@ -53,10 +60,5 @@ function btnActive() {
     }; 
 }
 
-function activeRowColor() {
-    
-    const actives = document.querySelectorAll(".active");
 
-    progress.style.width = ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
-}
 
